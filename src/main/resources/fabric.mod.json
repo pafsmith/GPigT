@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "gpigt",
+	"version": "${version}",
+	"name": "GPigT",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/gpigt/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"g.pig.t.GPigT"
+		],
+		"client": [
+			"g.pig.t.client.GPigTClient"
+		],
+		"fabric-datagen": [
+			"g.pig.t.client.GPigTDataGenerator"
+		]
+	},
+	"mixins": [
+		"gpigt.mixins.json",
+		{
+			"config": "gpigt.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
