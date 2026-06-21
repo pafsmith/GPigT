@@ -19,10 +19,10 @@ public class GpigTEntity extends Pig {
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
                                         EntitySpawnReason reason, SpawnGroupData spawnGroupData) {
         SpawnGroupData data = super.finalizeSpawn(level, difficulty, reason, spawnGroupData);
-        if (GpigTNames.TOTAL_WEIGHT <= 0) {
+        if (GpigTNames.totalWeight() <= 0) {
             return data;
         }
-        String name = GpigTNames.pick(this.getRandom().nextInt(GpigTNames.TOTAL_WEIGHT));
+        String name = GpigTNames.pick(this.getRandom().nextInt(GpigTNames.totalWeight()));
         if (name == null) {
             return data;
         }

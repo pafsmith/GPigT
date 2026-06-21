@@ -1,50 +1,50 @@
 package g.pig.t;
 
 import java.util.List;
-import java.util.Map;
 
 /**
- * The single place to add GpigT names. Add or remove entries here —
- * {@link g.pig.t.entity.GpigTEntity} picks from this list on spawn.
+ * Holds the names GpigT entities can spawn with. Data is loaded from
+ * data packs by {@link GpigTNamesReloadListener} — add or override names by
+ * editing data/gpigt/gpigt_names/*.json, not by changing this class.
  */
 public final class GpigTNames {
     private GpigTNames() {
     }
 
-    // name, weight (higher = more common)
-    public static final List<Map.Entry<String, Integer>> ALL = List.of(
-            Map.entry("AIfred Piggyworth", 100),
-            Map.entry("Lil' Pig", 100),
-            Map.entry("Mr. Smith", 1),
-            Map.entry("Hamthropic", 100),
-            Map.entry("Boaracle", 100),
-            Map.entry("Rasher", 100),
-            Map.entry("Sam Pigman", 100),
-            Map.entry("Mustafa Piggyman", 100),
-            Map.entry("Peter Porker", 100),
-            Map.entry("Kevin Bacon", 100),
-            Map.entry("Chris P. Bacon", 100),
-            Map.entry("Steven Fried", 100),
-            Map.entry("John Pork (Is Calling)", 100),
-            Map.entry("Sylvester Styllone", 100),
-            Map.entry("Bear Grills", 100)
-    );
+    /** One entry: a name and its relative spawn weight (higher = more common). */
+    public record WeightedName(String name, int weight) {
+    }
 
-    public static final int TOTAL_WEIGHT = ALL.stream().mapToInt(Map.Entry::getValue).sum();
+    private static volatile List<WeightedName> all = List.of();
+    private static volatile int totalWeight = 0;
+
+    /** Replaces the loaded names; called by the reload listener on (re)load. */
+    public static void setNames(List<WeightedName> names) {
+        all = List.copyOf(names);
+        int sum = 0;
+        for (WeightedName name : all) {
+            sum += name.weight();
+        }
+        totalWeight = sum;
+    }
+
+    public static int totalWeight() {
+        return totalWeight;
+    }
 
     /**
-     * Picks a name for a weighted roll in {@code [0, TOTAL_WEIGHT)}.
-     * Returns null if the list is empty so the entity can spawn unnamed
+     * Picks a name for a weighted roll in {@code [0, totalWeight())}.
+     * Returns null if no names are loaded so the entity can spawn unnamed
      * rather than crash.
      */
     public static String pick(int roll) {
-        for (Map.Entry<String, Integer> entry : ALL) {
-            roll -= entry.getValue();
+        for (WeightedName name : all) {
+            roll -= name.weight();
             if (roll < 0) {
-                return entry.getKey();
+                return name.name();
             }
         }
-        // Empty list, or a roll outside [0, TOTAL_WEIGHT): no name.
+        // No names, or a roll outside [0, totalWeight): no name.
         return null;
     }
 }
