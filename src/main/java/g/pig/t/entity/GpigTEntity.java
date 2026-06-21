@@ -9,7 +9,6 @@ import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.animal.pig.Pig;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import org.jetbrains.annotations.Nullable;
 
 public class GpigTEntity extends Pig {
     public GpigTEntity(EntityType<? extends Pig> entityType, Level level) {
@@ -17,9 +16,8 @@ public class GpigTEntity extends Pig {
     }
 
     @Override
-    @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                                        EntitySpawnReason reason, @Nullable SpawnGroupData spawnGroupData) {
+                                        EntitySpawnReason reason, SpawnGroupData spawnGroupData) {
         SpawnGroupData data = super.finalizeSpawn(level, difficulty, reason, spawnGroupData);
         if (GpigTNames.TOTAL_WEIGHT <= 0) {
             return data;
