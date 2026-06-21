@@ -11,18 +11,23 @@ public final class GpigTNames {
     private GpigTNames() {
     }
 
-    // name, weight (higher = more common) — rarity / colour / sound / etc. here ???
+    // name, weight (higher = more common)
     public static final List<Map.Entry<String, Integer>> ALL = List.of(
-            Map.entry("Sir Oinksalot", 10),
-            Map.entry("Hammington", 10),
-            Map.entry("Truffle", 8),
-            Map.entry("Bacon Bit", 8),
-            Map.entry("Snortimer", 6),
-            Map.entry("Lord Squeals", 5),
-            Map.entry("Porky", 5),
-            Map.entry("Mudpuddle", 4),
-            Map.entry("Curly", 3),
-            Map.entry("Princess Trotter", 1)
+            Map.entry("AIfred Piggyworth", 100),
+            Map.entry("Lil' Pig", 100),
+            Map.entry("Mr. Smith", 1),
+            Map.entry("Hamthropic", 100),
+            Map.entry("Boaracle", 100),
+            Map.entry("Rasher", 100),
+            Map.entry("Sam Pigman", 100),
+            Map.entry("Mustafa Piggyman", 100),
+            Map.entry("Peter Porker", 100),
+            Map.entry("Kevin Bacon", 100),
+            Map.entry("Chris P. Bacon", 100),
+            Map.entry("Steven Fried", 100),
+            Map.entry("John Pork (Is Calling)", 100),
+            Map.entry("Sylvester Styllone", 100),
+            Map.entry("Bear Grills", 100)
     );
 
     public static final int TOTAL_WEIGHT = ALL.stream().mapToInt(Map.Entry::getValue).sum();
