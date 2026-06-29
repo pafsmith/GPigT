@@ -14,6 +14,7 @@
     { "name": "Steven Fried", "rarity": "COMMON" },
     { "name": "John Pork (Is Calling)", "rarity": "COMMON" },
     { "name": "Sylvester Styllone", "rarity": "COMMON" },
-    { "name": "Bear Grills", "rarity": "COMMON" }
+    { "name": "Bear Grills", "rarity": "COMMON" },
+    { "name": "Pig4J", "rarity": "INVALID" }
   ]
 }

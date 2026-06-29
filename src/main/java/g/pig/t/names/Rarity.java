@@ -25,4 +25,21 @@ public enum Rarity {
     public int weight() {
         return weight;
     }
+
+    /**
+     * Resolves a rarity by its exact name (e.g. {@code "EPIC"}), or null if
+     * {@code raw} is null or doesn't match a tier. Callers treat null as
+     * invalid data — log and skip — rather than guessing a default.
+     */
+    public static Rarity fromString(String raw) {
+        if (raw == null) {
+            return null;
+        }
+        for (Rarity rarity : values()) {
+            if (rarity.name().equals(raw)) {
+                return rarity;
+            }
+        }
+        return null;
+    }
 }
