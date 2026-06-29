@@ -1,29 +1,38 @@
 package g.pig.t.names;
 
+import net.minecraft.ChatFormatting;
+
 /**
  * Spawn rarity for a GpigT name. Each tier owns its relative spawn weight
- * (higher = more common), so names inherit a weight by referencing a tier
- * rather than hardcoding a number. Tune the balance by editing the weights
- * here — it applies to every name of that tier at once.
+ * (higher = more common) and its display colour, so names inherit both by
+ * referencing a tier rather than hardcoding them. Tune the balance or palette
+ * by editing the tiers here — it applies to every name of that tier at once.
  *
  * <p>Loaded from data packs by name (e.g. {@code "rarity": "LEGENDARY"}); see
  * {@link NamesReloadListener}.
  */
 public enum Rarity {
-    COMMON(100),
-    RARE(25),
-    EPIC(5),
-    LEGENDARY(1);
+    COMMON(100, ChatFormatting.WHITE),
+    RARE(25, ChatFormatting.AQUA),
+    EPIC(5, ChatFormatting.LIGHT_PURPLE),
+    LEGENDARY(1, ChatFormatting.GOLD);
 
     private final int weight;
+    private final ChatFormatting color;
 
-    Rarity(int weight) {
+    Rarity(int weight, ChatFormatting color) {
         this.weight = weight;
+        this.color = color;
     }
 
     /** Relative spawn weight for names of this tier. */
     public int weight() {
         return weight;
+    }
+
+    /** Colour the name renders in for this tier. */
+    public ChatFormatting color() {
+        return color;
     }
 
     /**

@@ -22,11 +22,11 @@ public class GpigTEntity extends Pig {
         if (Names.totalWeight() <= 0) {
             return data;
         }
-        String name = Names.pick(this.getRandom().nextInt(Names.totalWeight()));
-        if (name == null) {
+        Names.WeightedName picked = Names.pick(this.getRandom().nextInt(Names.totalWeight()));
+        if (picked == null) {
             return data;
         }
-        this.setCustomName(Component.literal(name));
+        this.setCustomName(Component.literal(picked.name()).withStyle(picked.rarity().color()));
         this.setCustomNameVisible(true);
         return data;
     }

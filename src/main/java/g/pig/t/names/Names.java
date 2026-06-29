@@ -40,15 +40,15 @@ public final class Names {
     }
 
     /**
-     * Picks a name for a weighted roll in {@code [0, totalWeight())}.
-     * Returns null if no names are loaded so the entity can spawn unnamed
-     * rather than crash.
+     * Picks a name for a weighted roll in {@code [0, totalWeight())}. Returns
+     * the full entry (name + rarity) so callers can colour it; null if no
+     * names are loaded, so the entity can spawn unnamed rather than crash.
      */
-    public static String pick(int roll) {
+    public static WeightedName pick(int roll) {
         for (WeightedName name : all) {
             roll -= name.weight();
             if (roll < 0) {
-                return name.name();
+                return name;
             }
         }
         // No names, or a roll outside [0, totalWeight): no name.
