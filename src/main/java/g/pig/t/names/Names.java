@@ -1,18 +1,25 @@
-package g.pig.t;
+package g.pig.t.names;
 
 import java.util.List;
 
 /**
  * Holds the names GpigT entities can spawn with. Data is loaded from
- * data packs by {@link GpigTNamesReloadListener} — add or override names by
+ * data packs by {@link NamesReloadListener} — add or override names by
  * editing data/gpigt/gpigt_names/*.json, not by changing this class.
  */
-public final class GpigTNames {
-    private GpigTNames() {
+public final class Names {
+    private Names() {
     }
 
-    /** One entry: a name and its relative spawn weight (higher = more common). */
-    public record WeightedName(String name, int weight) {
+    /**
+     * One entry: a name and its {@link Rarity}. The spawn weight is derived
+     * from the rarity rather than stored, so {@link #weight()} keeps working
+     * for the pick logic. A missing/unknown rarity falls back to COMMON.
+     */
+    public record WeightedName(String name, Rarity rarity) {
+        public int weight() {
+            return rarity == null ? Rarity.COMMON.weight() : rarity.weight();
+        }
     }
 
     private static volatile List<WeightedName> all = List.of();

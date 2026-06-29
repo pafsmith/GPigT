@@ -1,6 +1,6 @@
 package g.pig.t.entity;
 
-import g.pig.t.GpigTNames;
+import g.pig.t.names.Names;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntitySpawnReason;
@@ -19,10 +19,10 @@ public class GpigTEntity extends Pig {
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
                                         EntitySpawnReason reason, SpawnGroupData spawnGroupData) {
         SpawnGroupData data = super.finalizeSpawn(level, difficulty, reason, spawnGroupData);
-        if (GpigTNames.totalWeight() <= 0) {
+        if (Names.totalWeight() <= 0) {
             return data;
         }
-        String name = GpigTNames.pick(this.getRandom().nextInt(GpigTNames.totalWeight()));
+        String name = Names.pick(this.getRandom().nextInt(Names.totalWeight()));
         if (name == null) {
             return data;
         }

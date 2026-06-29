@@ -1,19 +1,19 @@
 {
   "names": [
-    { "name": "AIfred Piggyworth", "weight": 100 },
-    { "name": "Lil' Pig", "weight": 100 },
-    { "name": "Mr. Smith", "weight": 1 },
-    { "name": "Hamthropic", "weight": 100 },
-    { "name": "Boaracle", "weight": 100 },
-    { "name": "Rasher", "weight": 100 },
-    { "name": "Sam Pigman", "weight": 100 },
-    { "name": "Mustafa Piggyman", "weight": 100 },
-    { "name": "Peter Porker", "weight": 100 },
-    { "name": "Kevin Bacon", "weight": 100 },
-    { "name": "Chris P. Bacon", "weight": 100 },
-    { "name": "Steven Fried", "weight": 100 },
-    { "name": "John Pork (Is Calling)", "weight": 100 },
-    { "name": "Sylvester Styllone", "weight": 100 },
-    { "name": "Bear Grills", "weight": 100 }
+    { "name": "Mr. Smith", "rarity": "LEGENDARY" },
+    { "name": "Hamthropic", "rarity": "EPIC" },
+    { "name": "Boaracle", "rarity": "EPIC" },
+    { "name": "AIfred Piggyworth", "rarity": "COMMON" },
+    { "name": "Lil' Pig", "rarity": "COMMON" },
+    { "name": "Rasher", "rarity": "COMMON" },
+    { "name": "Sam Pigman", "rarity": "COMMON" },
+    { "name": "Mustafa Piggyman", "rarity": "COMMON" },
+    { "name": "Peter Porker", "rarity": "COMMON" },
+    { "name": "Kevin Bacon", "rarity": "COMMON" },
+    { "name": "Chris P. Bacon", "rarity": "COMMON" },
+    { "name": "Steven Fried", "rarity": "COMMON" },
+    { "name": "John Pork (Is Calling)", "rarity": "COMMON" },
+    { "name": "Sylvester Styllone", "rarity": "COMMON" },
+    { "name": "Bear Grills", "rarity": "COMMON" }
   ]
 }

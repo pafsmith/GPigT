@@ -1,5 +1,6 @@
 package g.pig.t;
 
+import g.pig.t.names.NamesReloadListener;
 import g.pig.t.registry.GPigTEntities;
 import g.pig.t.registry.GPigTItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,7 +16,7 @@ public final class GPigT implements ModInitializer {
         GPigTEntities.initialize();
         GPigTItems.initialize();
         ResourceManagerHelper.get(PackType.SERVER_DATA)
-                .registerReloadListener(new GpigTNamesReloadListener());
+                .registerReloadListener(new NamesReloadListener());
     }
 
     public static Identifier id(String path) {
