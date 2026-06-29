@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gpigt:item/gpigt_spawn_egg"
+  }
+}
