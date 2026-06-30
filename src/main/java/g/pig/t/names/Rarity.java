@@ -15,11 +15,13 @@ public enum Rarity {
     COMMON(100, ChatFormatting.WHITE),
     RARE(25, ChatFormatting.AQUA),
     EPIC(5, ChatFormatting.LIGHT_PURPLE),
-    LEGENDARY(1, ChatFormatting.GOLD);
+    LEGENDARY(1, ChatFormatting.GOLD),
+    HEROSWINE(50, ChatFormatting.DARK_RED);
 
     private final int weight;
     private final ChatFormatting color;
 
+    /** Relative spawn weight for names of this tier. */
     Rarity(int weight, ChatFormatting color) {
         this.weight = weight;
         this.color = color;
