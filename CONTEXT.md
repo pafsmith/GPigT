@@ -21,15 +21,15 @@ are the canonical names — code and docs use the same words.
 
 - **NONE** (default) — a sign no GPigT will touch: freshly placed, blank,
   purely decorative, or a pre-existing sign a player has never questioned on.
-- **QUESTION** — a sign a player has written a question on that has not yet
-  been answered. This is what a GPigT hunts.
+- **PROMPT** — a sign a player has written a prompt on that has not yet
+  been responded to. This is what a GPigT hunts.
 - **CLAIMED** — a QUESTION sign a GPigT has reached and is currently pondering.
   The claim is recorded with a **claim timestamp** (the world time at which the
   GPigT claimed it). Other GPigTs skip a CLAIMED sign, so two GPigTs never
   answer the same sign — unless the claim is **stale**: if its timestamp is
   older than a set threshold (the claiming GPigT died, unloaded, or the server
   crashed mid-ponder), another GPigT may reclaim it.
-- **ANSWER** — a sign a GPigT has written its response onto. Ignored by every
+- **RESPONSE** — a sign a GPigT has written its response onto. Ignored by every
   GPigT, including ones other than the author.
 
 **Re-question:** writing new question text onto a sign always returns it to
