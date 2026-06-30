@@ -1,0 +1,20 @@
+{
+  "names": [
+    { "name": "Mr. Smith", "rarity": "LEGENDARY" },
+    { "name": "Hamthropic", "rarity": "EPIC" },
+    { "name": "Boaracle", "rarity": "EPIC" },
+    { "name": "AIfred Piggyworth", "rarity": "COMMON" },
+    { "name": "Lil' Pig", "rarity": "COMMON" },
+    { "name": "Rasher", "rarity": "COMMON" },
+    { "name": "Sam Pigman", "rarity": "COMMON" },
+    { "name": "Mustafa Piggyman", "rarity": "COMMON" },
+    { "name": "Peter Porker", "rarity": "RARE" },
+    { "name": "Kevin Bacon", "rarity": "COMMON" },
+    { "name": "Chris P. Bacon", "rarity": "RARE" },
+    { "name": "Steven Fried", "rarity": "COMMON" },
+    { "name": "John Pork (Is Calling)", "rarity": "COMMON" },
+    { "name": "Sylvester Styllone", "rarity": "RARE" },
+    { "name": "Bear Grills", "rarity": "RARE" },
+    { "name": "Pig4J", "rarity": "INVALID" }
+  ]
+}
