@@ -1,10 +1,12 @@
 package g.pig.t.registry;
 
 import g.pig.t.GPigT;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 
@@ -23,6 +25,7 @@ public final class GPigTItems {
     }
 
     public static void initialize() {
-        // Loads the class so static registrations run during mod initialization.
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS)
+                .register(output -> output.accept(GPIGT_SPAWN_EGG));
     }
 }
