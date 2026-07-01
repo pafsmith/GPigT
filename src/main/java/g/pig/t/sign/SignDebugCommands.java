@@ -97,7 +97,7 @@ public final class SignDebugCommands {
     private static int setState(CommandSourceStack source, TargetSign target, String rawState) {
         SignState newState = SignState.fromSerializedName(rawState);
         if (newState == null) {
-            source.sendFailure(Component.literal("Unknown sign state '" + rawState + "'. Use none, question, claimed, or answer."));
+            source.sendFailure(Component.literal("Unknown sign state '" + rawState + "'. Use none, prompt, claimed, or response."));
             return 0;
         }
 

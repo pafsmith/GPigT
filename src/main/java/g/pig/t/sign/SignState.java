@@ -5,9 +5,9 @@ import net.minecraft.util.StringRepresentable;
 
 public enum SignState implements StringRepresentable {
     NONE("none"),
-    QUESTION("question"),
+    PROMPT("prompt"),
     CLAIMED("claimed"),
-    ANSWER("answer");
+    RESPONSE("response");
 
     public static final Codec<SignState> CODEC = StringRepresentable.fromEnum(SignState::values);
 
