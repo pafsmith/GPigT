@@ -2,6 +2,8 @@ package g.pig.t.registry;
 
 import g.pig.t.GPigT;
 import g.pig.t.entity.GpigTEntity;
+import g.pig.t.entity.HogzillaEntity;
+import g.pig.t.entity.PorkzillaryForceEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,10 +24,32 @@ public final class GPigTEntities {
                     .build(GPIGT_KEY)
     );
 
+    public static final ResourceKey<EntityType<?>> HOGZILLA_KEY = ResourceKey.create(Registries.ENTITY_TYPE, GPigT.id("hogzilla"));
+
+    public static final EntityType<HogzillaEntity> HOGZILLA = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE,
+            HOGZILLA_KEY,
+            EntityType.Builder.of(HogzillaEntity::new, MobCategory.MONSTER)
+                    .sized(0.9F, 0.9F)
+                    .build(HOGZILLA_KEY)
+    );
+
+    public static final ResourceKey<EntityType<?>> PORKZILLARY_FORCE_KEY = ResourceKey.create(Registries.ENTITY_TYPE, GPigT.id("porkzillary_force"));
+
+    public static final EntityType<PorkzillaryForceEntity> PORKZILLARY_FORCE = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE,
+            PORKZILLARY_FORCE_KEY,
+            EntityType.Builder.of(PorkzillaryForceEntity::new, MobCategory.MONSTER)
+                    .sized(0.25F, 0.25F)
+                    .build(PORKZILLARY_FORCE_KEY)
+    );
+
     private GPigTEntities() {
     }
 
     public static void initialize() {
         FabricDefaultAttributeRegistry.register(GPIGT, Pig.createAttributes());
+        FabricDefaultAttributeRegistry.register(HOGZILLA, HogzillaEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(PORKZILLARY_FORCE, PorkzillaryForceEntity.createAttributes());
     }
 }

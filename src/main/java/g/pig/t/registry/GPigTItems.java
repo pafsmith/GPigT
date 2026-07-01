@@ -19,6 +19,26 @@ public final class GPigTItems {
                     .spawnEgg(GPigTEntities.GPIGT))
     );
 
+    public static final ResourceKey<Item> HOGZILLA_SPAWN_EGG_KEY = ResourceKey.create(Registries.ITEM, GPigT.id("hogzilla_spawn_egg"));
+
+    public static final Item HOGZILLA_SPAWN_EGG = Registry.register(
+            BuiltInRegistries.ITEM,
+            HOGZILLA_SPAWN_EGG_KEY,
+            new SpawnEggItem(new Item.Properties()
+                    .setId(HOGZILLA_SPAWN_EGG_KEY)
+                    .spawnEgg(GPigTEntities.HOGZILLA))
+    );
+
+    public static final ResourceKey<Item> PORKZILLARY_FORCE_SPAWN_EGG_KEY = ResourceKey.create(Registries.ITEM, GPigT.id("porkzillary_force_spawn_egg"));
+
+    public static final Item PORKZILLARY_FORCE_SPAWN_EGG = Registry.register(
+            BuiltInRegistries.ITEM,
+            PORKZILLARY_FORCE_SPAWN_EGG_KEY,
+            new SpawnEggItem(new Item.Properties()
+                    .setId(PORKZILLARY_FORCE_SPAWN_EGG_KEY)
+                    .spawnEgg(GPigTEntities.PORKZILLARY_FORCE))
+    );
+
     private GPigTItems() {
     }
 

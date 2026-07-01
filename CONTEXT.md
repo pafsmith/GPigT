@@ -34,3 +34,42 @@ are the canonical names — code and docs use the same words.
 
 **Re-question:** writing new question text onto a sign always returns it to
 QUESTION, so a player can continue the thread on the same sign.
+
+## Spawn Storm
+
+The event that announces HOGZILLA's arrival: 30 lightning strikes scattered
+within a 30-block radius over 2 seconds. Occurs once, immediately on spawn.
+
+## HOGZILLA (HOGZ)
+
+A colossal pig-derived boss entity (`MobCategory.MONSTER`). HOGZILLA never
+attacks directly — its **Aura** is the sole source of all damage and
+disruption. The threat is environmental, not melee.
+
+## Stalk (Stalking)
+
+HOGZILLA's sole objective: relentlessly pursue the nearest player. HOGZILLA
+never abandons the Stalk. It moves at approximately one block per five seconds
+in a direct 3D vector toward the target — no pathfinding, no navigation mesh.
+HOGZILLA always moves this way; on flat ground it appears to walk, in the air
+it floats, but the movement mode is identical. The walking animation plays
+regardless of altitude. Any block in the path is destroyed instantly via
+**Unstoppable**.
+
+## Aura
+
+The field of periodic hazards HOGZILLA radiates at all times while Stalking.
+The Aura has three components: **Bolts**, **Salvo**, and **Porkzillary Forces**.
+All cadences and radii are hardcoded (not exposed as gamerules).
+
+- **Bolts** — 5–10 lightning strikes within a 20-block radius, every ~3 seconds.
+- **Salvo** — 8–12 lit TNT fired radially in all directions, every ~8 seconds.
+- **Porkzillary Forces** — 4–6 piglets spawned within 8 blocks, every ~15 seconds.
+
+## Unstoppable
+
+The property by which HOGZILLA immediately destroys any block it attempts to
+move into — including obsidian, ancient debris, and bedrock. No player-built
+structure stops HOGZILLA except **brick walls** (a reference to the Three
+Little Pigs: the only material that holds against the wolf). Applies on all
+axes during Airborne movement.

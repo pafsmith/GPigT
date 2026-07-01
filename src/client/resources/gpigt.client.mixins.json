@@ -2,7 +2,9 @@
 	"required": true,
 	"package": "g.pig.t.client.mixin",
 	"compatibilityLevel": "JAVA_25",
-	"client": [],
+	"client": [
+		"SplashManagerMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},
