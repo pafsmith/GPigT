@@ -1,6 +1,7 @@
 package g.pig.t;
 
 import g.pig.t.names.NamesReloadListener;
+import g.pig.t.ponder.PonderDebugCommands;
 import g.pig.t.ponder.PonderService;
 import g.pig.t.registry.GPigTEntities;
 import g.pig.t.registry.GPigTItems;
@@ -24,6 +25,7 @@ public final class GPigT implements ModInitializer {
         SignAttachments.initialize();
         SignDebugCommands.initialize();
         PonderService.initialize();
+        PonderDebugCommands.initialize();
         ResourceManagerHelper.get(PackType.SERVER_DATA)
                 .registerReloadListener(new NamesReloadListener());
     }
