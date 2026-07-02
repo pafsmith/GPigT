@@ -1,7 +1,7 @@
 package g.pig.t.registry;
 
 import g.pig.t.GPigT;
-import g.pig.t.entity.GpigTEntity;
+import g.pig.t.entity.GPigTEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,10 +14,10 @@ import net.minecraft.world.entity.animal.pig.Pig;
 public final class GPigTEntities {
     public static final ResourceKey<EntityType<?>> GPIGT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, GPigT.id("gpigt"));
 
-    public static final EntityType<GpigTEntity> GPIGT = Registry.register(
+    public static final EntityType<GPigTEntity> GPIGT = Registry.register(
             BuiltInRegistries.ENTITY_TYPE,
             GPIGT_KEY,
-            EntityType.Builder.of(GpigTEntity::new, MobCategory.CREATURE)
+            EntityType.Builder.of(GPigTEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.9F)
                     .build(GPIGT_KEY)
     );
