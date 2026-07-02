@@ -15,6 +15,7 @@
     { "name": "John Pork (Is Calling)", "rarity": "COMMON" },
     { "name": "Sylvester Styllone", "rarity": "RARE" },
     { "name": "Bear Grills", "rarity": "RARE" },
-    { "name": "Pig4J", "rarity": "INVALID" }
+    { "name": "Pig4J", "rarity": "INVALID" },
+    { "name": "Gammondorf", "rarity": "EPIC"}
   ]
 }
